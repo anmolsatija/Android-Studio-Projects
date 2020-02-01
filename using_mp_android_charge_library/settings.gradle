@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='using_mp_android_charge_library'
