@@ -1,10 +1,13 @@
 package com.example.menudemo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -13,6 +16,24 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater menuInflater=getMenuInflater();
         menuInflater.inflate(R.menu.menu_main,menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        super.onOptionsItemSelected(item);
+        switch (item.getItemId())
+        {
+            case R.id.settings:
+                Log.i("Menu item Selected-","settings");
+                return true;
+            case R.id.help:
+                Log.i("Menu item Selected-","help");
+                return true;
+            default:
+                return false;
+        }
+
     }
 
     @Override
